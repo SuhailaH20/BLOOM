@@ -2,8 +2,6 @@ import SwiftUI
 
 struct BoardPage: View {
     var body: some View {
-        ZStack {
-            backgroundImage()
             
             VStack {
                 Image("Title")
@@ -11,7 +9,7 @@ struct BoardPage: View {
                 
                 AllCards()
             }
-        }
+            .background(backgroundImage())
     }
 }
 
