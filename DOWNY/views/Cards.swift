@@ -35,42 +35,39 @@ struct StepCard<Content: View>: View {
     }
     
     var body: some View {
-        ZStack {
-            // Card background
+        VStack(spacing: 24) {
+
+            // PROGRESS DOTS
+            HStack(spacing: 12) {
+                ForEach(0..<totalSteps, id: \.self) { index in
+                    Circle()
+                        .frame(width: 14, height: 14)
+                        .foregroundColor(
+                            index == currentIndex
+                            ? .white
+                            : .white.opacity(0.3)
+                        )
+                }
+            }
+
+            // Main content inside card
+            content
+
+        }
+        .frame(width: 602, height: 782)
+        .background(
             RoundedRectangle(cornerRadius: 69)
-                .frame(width: 602, height: 782)
                 .foregroundStyle(color)
                 .shadow(color: Color.black.opacity(0.25), radius: 10, x: 9, y: 30)
                 .overlay(
                     Image("pattern")
                         .resizable()
-                        .frame(width: 602, height: 782)
                         .cornerRadius(69)
                         .opacity(0.08)
                 )
-            
-            VStack(spacing: 24) {
-                
-                // PROGRESS DOTS
-                HStack(spacing: 12) {
-                    ForEach(0..<totalSteps, id: \.self) { index in
-                        Circle()
-                            .frame(width: 14, height: 14)
-                            .foregroundColor(
-                                index == currentIndex
-                                ? .white
-                                : .white.opacity(0.3)
-                            )
-                    }
-                }
-                
-                // Main content inside card
-                content
-
-            }
-            .frame(width: 602, height: 782)
-        }
+        )
     }
+
 }
 
 
