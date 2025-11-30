@@ -49,7 +49,7 @@ struct AllCards: View {
         }.buttonStyle(PlainButtonStyle())
             
             Button(action: {
-                selectedCard = "beingKind"
+                selectedCard = "brushingHair"
             }){
                 ColorCard(color: .greeney) {
                     CardContent(

@@ -11,15 +11,30 @@ public struct Cards: View {
     @Binding var selectedCard: String?
     
     public var body: some View {
-        if let selected = selectedCard, selected == "eatingFood" {
-            EatingFoodCardsView(selectedCard: $selectedCard)
-                .background(backgroundImage())
-        } else {
-            EatingFoodCardsView(selectedCard: $selectedCard)
-                .background(backgroundImage())
+        Group {
+            switch selectedCard {
+                
+            case "eatingFood":
+                EatingFoodCardsView(selectedCard: $selectedCard)
+                
+            case "beingKind":
+                BeingKindCardsView(selectedCard: $selectedCard)
+                
+            case "brushingTeeth":
+                BrushingTeethCardsView(selectedCard: $selectedCard) 
+                
+            case "brushingHair":
+                BrushingHairCardsView(selectedCard: $selectedCard)
+                
+            default:
+                Text("No card selected")
+                    .foregroundColor(.gray)
+            }
         }
+        .background(backgroundImage())
     }
 }
+
 
 
 struct StepCard<Content: View>: View {
@@ -148,6 +163,8 @@ struct StepCardContent: View {
 /****THE CARDS CONTENT  **/
 
 struct BrushingTeethCardsView: View {
+    @Binding var selectedCard: String?
+
     let steps: [StepModel] = [
         StepModel(title: "Brushing Teeth", description: "Children brush their teeth twice a day\nwith their beautiful toothbrushes.", imageName: "brushingTeeth1", color: .bluey),
         StepModel(title: "Washing Hands", description: "Wash hands with soap after using the bathroom.", imageName: "brushingTeeth2", color: .bluey),
