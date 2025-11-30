@@ -13,6 +13,7 @@ public struct Cards: View {
     public var body: some View {
         if let selected = selectedCard, selected == "eatingFood" {
             EatingFoodCardsView(selectedCard: $selectedCard)
+                .background(backgroundImage())
         } else {
             StepFlowView()
                 .background(backgroundImage())
@@ -75,33 +76,52 @@ struct StepCard<Content: View>: View {
 
 }
 
+struct StepFlow<Content: View>: View {
+    let steps: [StepModel]
+    let content: (StepModel, @escaping () -> Void) -> Content
+    
+    @State private var currentIndex = 0
+    
+    var body: some View {
+        StepCard(
+            color: steps[currentIndex].color,
+            currentIndex: currentIndex,
+            totalSteps: steps.count
+        ) {
+            content(steps[currentIndex], next)
+        }
+    }
+    
+    private func next() {
+        if currentIndex < steps.count - 1 {
+            currentIndex += 1
+        }
+    }
+}
+
 
 struct StepCardContent: View {
-    let title: String
-    let description: String
-    let imageName: String
-    let onPlay: () -> Void
+    let step: StepModel
+    let onNext: () -> Void
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             VStack(spacing: 20) {
-                Text(title)
+                Text(step.title)
                     .font(.system(size: 72, weight: .bold))
                     .multilineTextAlignment(.center)
-                
-                Text(description)
-                    .font(.system(size: 24, weight: .regular))
+
+                Text(step.description)
+                    .font(.system(size: 24))
                     .multilineTextAlignment(.center)
-                
-                Image(imageName)
+
+                Image(step.imageName)
                     .resizable()
-                //changed width and height
                     .frame(width: 343, height: 514)
                     .cornerRadius(16)
             }
-            Button(action: {
-                onPlay()
-            }) {
+            
+            Button(action: onNext) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 100)
                         .frame(width: 91, height: 50)
@@ -120,113 +140,42 @@ struct StepCardContent: View {
 
 
 struct StepFlowView: View {
-    @State private var currentIndex = 0
-    
     let steps: [StepModel] = [
-        StepModel(
-            title: "Brushing Teeth",
-            description: "Children brush their teeth twice a day\nwith their beautiful toothbrushes.",
-            imageName: "brushingTeeth1",
-            color: .bluey
-        ),
-        StepModel(
-            title: "Washing Hands",
-            description: "Wash hands with soap after using the bathroom.",
-            imageName: "brushingTeeth2",
-            color: .bluey
-        ),
-        StepModel(
-            title: "Washing Hands",
-            description: "Wash hands with soap after using the bathroom.",
-            imageName: "brushingTeeth3",
-            color: .bluey
-        ),
-        StepModel(
-            title: "Washing Hands",
-            description: "Wash hands with soap after using the bathroom.",
-            imageName: "brushingTeeth4",
-            color: .bluey
-        ),
+        StepModel(title: "Brushing Teeth", description: "Children brush their teeth twice a day\nwith their beautiful toothbrushes.", imageName: "brushingTeeth1", color: .bluey),
+        StepModel(title: "Washing Hands", description: "Wash hands with soap after using the bathroom.", imageName: "brushingTeeth2", color: .bluey),
+        StepModel(title: "Washing Hands", description: "Wash hands with soap after using the bathroom.", imageName: "brushingTeeth3", color: .bluey),
+        StepModel(title: "Washing Hands", description: "Wash hands with soap after using the bathroom.", imageName: "brushingTeeth4", color: .bluey),
     ]
-    
+
     var body: some View {
-        StepCard(
-            color: steps[currentIndex].color,
-            currentIndex: currentIndex,
-            totalSteps: steps.count
-        ) {
-            StepCardContent(
-                title: steps[currentIndex].title,
-                description: steps[currentIndex].description,
-                imageName: steps[currentIndex].imageName,
-                onPlay: {
-                    if currentIndex < steps.count - 1 {
-                        currentIndex += 1
-                    }
-                }
-            )
+        StepFlow(steps: steps) { step, next in
+            StepCardContent(step: step, onNext: next)
         }
     }
 }
+
 
 
 
 struct EatingFoodCardsView: View {
-    @State private var currentIndex = 0
-    @Binding var selectedCard: String?
-
+    @Binding var selectedCard: String? 
+    
     let steps: [StepModel] = [
-        StepModel(
-            title: "Eating Food",
-            description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
-            imageName: "hungry",
-            color: .yellowey
-        ),
-        StepModel(
-            title: "Eating Food",
-            description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
-            imageName: "thinkingOfFood",
-            color: .yellowey
-        ),
-        StepModel(
-            title: "Eating Food",
-            description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
-            imageName: "FindanApple",
-            color: .yellowey
-        ),
-        StepModel(
-            title: "Eating Food",
-            description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
-            imageName: "eatinganApple",
-            color: .yellowey
-        ),
-        StepModel(
-            title: "Eating Food",
-            description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
-            imageName: "fullStom.",
-            color: .yellowey
-        ),
+        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "hungry", color: .yellowey),
+        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "thinkingOfFood", color: .yellowey),
+        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "FindanApple", color: .yellowey),
+        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "eatinganApple", color: .yellowey),
+        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "fullStom.", color: .yellowey),
     ]
     
     var body: some View {
-        StepCard(
-            color: steps[currentIndex].color,
-            currentIndex: currentIndex,
-            totalSteps: steps.count
-        ) {
-            StepCardContent(
-                title: steps[currentIndex].title,
-                description: steps[currentIndex].description,
-                imageName: steps[currentIndex].imageName,
-                onPlay: {
-                    if currentIndex < steps.count - 1 {
-                        currentIndex += 1
-                    }
-                }
-            )
+        StepFlow(steps: steps) { step, next in
+            StepCardContent(step: step, onNext: next)
+            }
         }
     }
-}
+
+
 
 #Preview {
     @Previewable @State var selectedCard: String? = nil
