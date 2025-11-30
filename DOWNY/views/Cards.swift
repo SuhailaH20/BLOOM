@@ -209,6 +209,7 @@ struct BeingKindCardsView: View {
         StepModel(title: "Being kind", description: "When we meet our friends or family, we greet \nthem with a smile.", imageName: "smiley", color: .redey),
         StepModel(title: "Being kind", description: "We share, help, and use kind words because it makes everyone feel safe and happy.", imageName: "friend", color: .redey),
         StepModel(title: "Being kind", description: "Giving gifts makes our heart feels warm,\n and the people around us feel good too.", imageName: "gift", color: .redey),
+        StepModel(title: "Good Job", description: " ", imageName: "GJ", color: .redey),
     ]
     
     var body: some View {
@@ -222,9 +223,10 @@ struct BeingKindCardsView: View {
 struct BrushingHairCardsView: View {
     
     let steps: [StepModel] = [
-        StepModel(title: "Combing hair", description: "Children brush their teeth twice a day /nwith their beautiful toothbrushes.", imageName: "messyHair", color: .greeney),
-        StepModel(title: "Combing hair", description: "Children brush their teeth twice a day /nwith their beautiful toothbrushes.", imageName: "combing", color: .greeney),
-        StepModel(title: "Combing hair", description: "Children brush their teeth twice a day /nwith their beautiful toothbrushes.", imageName: "kind", color: .greeney),
+        StepModel(title: "Combing hair", description: "Children feel upset when their hair gets messy.", imageName: "messyHair", color: .greeney),
+        StepModel(title: "Combing hair", description: "Children brush their hair gently \nusing their beautiful brushes.", imageName: "combing", color: .greeney),
+        StepModel(title: "Combing hair", description: "Children feel happy and confident after they \nfinish combing their hair.", imageName: "kind", color: .greeney),
+        StepModel(title: "Good Job", description: " ", imageName: "GJ", color: .greeney),
     ]
     
     var body: some View {
