@@ -15,7 +15,7 @@ public struct Cards: View {
             EatingFoodCardsView(selectedCard: $selectedCard)
                 .background(backgroundImage())
         } else {
-            StepFlowView()
+            BeingKindCardsView(selectedCard: $selectedCard)
                 .background(backgroundImage())
         }
     }
@@ -177,6 +177,22 @@ struct EatingFoodCardsView: View {
         }
     }
 
+
+struct BeingKindCardsView: View {
+    @Binding var selectedCard: String?
+    
+    let steps: [StepModel] = [
+        StepModel(title: "Being kind", description: "When we meet our friends or family, we greet \nthem with a smile.", imageName: "smiley", color: .redey),
+        StepModel(title: "Being kind", description: "We share, help, and use kind words because it makes everyone feel safe and happy.", imageName: "friend", color: .redey),
+        StepModel(title: "Being kind", description: "Giving gifts makes our heart feels warm,\n and the people around us feel good too.", imageName: "gift", color: .redey),
+    ]
+    
+    var body: some View {
+        StepFlow(steps: steps) { step, next in
+            StepCardContent(step: step, onNext: next)
+            }
+        }
+    }
 
 
 #Preview {
