@@ -96,10 +96,9 @@ struct StepCardContent: View {
                 Image(imageName)
                     .resizable()
                 //changed width and height
-                    .frame(width: 300, height: 500)
+                    .frame(width: 343, height: 514)
                     .cornerRadius(16)
             }
-            
             Button(action: {
                 onPlay()
             }) {
@@ -115,8 +114,6 @@ struct StepCardContent: View {
                     }
                 }
             }
-            //changed padding
-            .padding(8)
         }
     }
 }
@@ -171,14 +168,14 @@ struct StepFlowView: View {
         }
     }
 }
-/***********************************************/
-//EATING FOOD CARD
-//APPEARS WHEN CLICKING ON EATING FOOD IN boardPage
+
+
+
 struct EatingFoodCardsView: View {
     @State private var currentIndex = 0
     @Binding var selectedCard: String?
-    
-    let eatingFoodSteps: [StepModel] = [
+
+    let steps: [StepModel] = [
         StepModel(
             title: "Eating Food",
             description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
@@ -206,38 +203,30 @@ struct EatingFoodCardsView: View {
         StepModel(
             title: "Eating Food",
             description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.",
-            imageName: "fullStom",
+            imageName: "fullStom.",
             color: .yellowey
         ),
     ]
     
     var body: some View {
-        VStack {
-            Spacer()
-            StepCard(
-                color: eatingFoodSteps[currentIndex].color,
-                currentIndex: currentIndex,
-                totalSteps: eatingFoodSteps.count
-            ) {
-                StepCardContent(
-                    title: eatingFoodSteps[currentIndex].title,
-                    description: eatingFoodSteps[currentIndex].description,
-                    imageName: eatingFoodSteps[currentIndex].imageName,
-                    onPlay: {
-                        if currentIndex < eatingFoodSteps.count - 1 {
-                            currentIndex += 1
-                        }
+        StepCard(
+            color: steps[currentIndex].color,
+            currentIndex: currentIndex,
+            totalSteps: steps.count
+        ) {
+            StepCardContent(
+                title: steps[currentIndex].title,
+                description: steps[currentIndex].description,
+                imageName: steps[currentIndex].imageName,
+                onPlay: {
+                    if currentIndex < steps.count - 1 {
+                        currentIndex += 1
                     }
-                )
-            }
-            
-            Spacer()
+                }
+            )
         }
-        .background(backgroundImage())
     }
-    /************************************************************************/
 }
-
 
 #Preview {
     @Previewable @State var selectedCard: String? = nil
