@@ -165,10 +165,11 @@ struct StepCardContent: View {
 struct BrushingTeethCardsView: View {
 
     let steps: [StepModel] = [
-        StepModel(title: "Brushing Teeth", description: "Children brush their teeth twice a day\nwith their beautiful toothbrushes.", imageName: "brushingTeeth1", color: .bluey),
-        StepModel(title: "Washing Hands", description: "Wash hands with soap after using the bathroom.", imageName: "brushingTeeth2", color: .bluey),
-        StepModel(title: "Washing Hands", description: "Wash hands with soap after using the bathroom.", imageName: "brushingTeeth3", color: .bluey),
-        StepModel(title: "Washing Hands", description: "Wash hands with soap after using the bathroom.", imageName: "brushingTeeth4", color: .bluey),
+        StepModel(title: "Brushing Teeth", description: "Children apply toothapste on their toothbrushe.", imageName: "BT1", color: .bluey),
+        StepModel(title: "Brushing Teeth", description: "Children brush their teeth gently.", imageName: "BT2", color: .bluey),
+        StepModel(title: "Brushing Teeth", description: "Children rinse their mouths after brushing their teeth..", imageName: "BT3", color: .bluey),
+//        StepModel(title: "Brushing Teeth", description: "Wash hands with soap after using the bathroom.", imageName: "brushingTeeth4", color: .bluey),
+        StepModel(title: "Good Job", description: " ", imageName: "GJ", color: .bluey),
     ]
 
     var body: some View {
@@ -185,11 +186,12 @@ struct BrushingTeethCardsView: View {
 struct EatingFoodCardsView: View {
     
     let steps: [StepModel] = [
-        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "hungry", color: .orangy),
-        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "thinkingOfFood", color: .orangy),
-        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "FindanApple", color: .orangy),
+        StepModel(title: "Eating Food", description: "When we feel hungry, we listen to our tummy \nand know it’s time to eat.", imageName: "hungry", color: .orangy),
+//        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "thinkingOfFood", color: .orangy),
+//        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "FindanApple", color: .orangy),
         StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "eatinganApple", color: .orangy),
-        StepModel(title: "Eating Food", description: "Children eat healthy food to grow strong\nand stay energetic throughout the day.", imageName: "fullStom.", color: .orangy),
+        StepModel(title: "Eating Food", description: "After we eat, our tummy feels happy and full,\n and we have energy to play and learn..", imageName: "fullStom.", color: .orangy),
+        StepModel(title: "Good Job", description: " ", imageName: "GJ", color: .orangy),
     ]
     
     var body: some View {
