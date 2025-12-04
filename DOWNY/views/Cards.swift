@@ -77,7 +77,9 @@ struct StepCard<Content: View>: View {
             Spacer().frame(height: 30)
             content
             
-            playButton
+            if currentIndex < totalSteps - 1 {
+                playButton
+            }
         }
         .frame(width: 700, height: 1000)
         .background(
@@ -172,9 +174,9 @@ struct StepCardContent: View {
 struct BrushingTeethCardsView: View {
 
     let steps: [StepModel] = [
-        StepModel(Icon: "apple", title: "Brushing Teeth", description: "Apply toothapste \non their toothbrush.", imageName: "brushing1", color: .bluey),
-        StepModel(Icon: "apple",title: "Brushing Teeth", description: "Children brush their teeth gently.", imageName: "BT2", color: .bluey),
-        StepModel(Icon: "apple", title: "Brushing Teeth", description: "Children rinse their mouths after brushing their teeth..", imageName: "BT3", color: .bluey),
+        StepModel(Icon: "brush", title: "Brushing Teeth", description: "Apply toothapste \non their toothbrush.", imageName: "brushing1", color: .bluey),
+        StepModel(Icon: "brush",title: "Brushing Teeth", description: "Children brush their teeth gently.", imageName: "brushing2", color: .bluey),
+        StepModel(Icon: "brush", title: "Brushing Teeth", description: "Children rinse their mouths after brushing their teeth..", imageName: "brushing3", color: .bluey),
         StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .bluey),
     ]
 
