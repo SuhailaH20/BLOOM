@@ -64,6 +64,14 @@ public struct Cards: View {
         var body: some View {
             VStack(spacing: -10){
                 
+             
+                Spacer().frame(height: 30)
+                content
+                
+                if currentIndex < totalSteps - 1 {
+                    playButton
+                }
+                Spacer().frame(height: 70)
                 HStack(spacing: 12) {
                     ForEach(0..<totalSteps, id: \.self) { index in
                         Circle()
@@ -75,18 +83,11 @@ public struct Cards: View {
                             )
                     }
                 }
-                Spacer().frame(height: 30)
-                content
-                
-                if currentIndex < totalSteps - 1 {
-                    playButton
-                }
             }
             .frame(width: 700, height: 1000)
             .background(
                 RoundedRectangle(cornerRadius: 69)
                     .foregroundStyle(color)
-                
                     .shadow(color: .black.opacity(0.25), radius: 10, x: 9, y: 30)
                     .overlay(
                         Image("pattern")
@@ -104,8 +105,9 @@ public struct Cards: View {
                     Image(systemName: "play.fill")
                     Spacer().frame(width: 33)
                     Text("Play routine")
-                }.font(.system(size: 48, weight: .bold))
-                    .foregroundColor(.babyBlue)
+                }
+                .font(.system(size: 48, weight: .bold))
+                    .foregroundColor(.black)
                     .frame(width: 592, height: 123)
                    .background(Color.white.opacity(0.7))
                 
@@ -150,13 +152,13 @@ public struct Cards: View {
                 
                 Text(step.title)
                     .font(.system(size: 60, weight: .bold))
-                    .foregroundColor(.babyBlue)
+                    .foregroundStyle(Color(red:55/255,green:55/255,blue:55/255,opacity: 1.0))
                     .multilineTextAlignment(.center)
                 
                 
                 Text(step.description)
-                    .font(.system(size: 48))
-                    .foregroundColor(.babyYellow)
+                    .font(.system(size: 40))
+                    .foregroundStyle(Color(red:55/255,green:55/255,blue:55/255,opacity: 0.8))
                     .multilineTextAlignment(.center)
                 
                 Image(step.imageName)
@@ -183,8 +185,8 @@ public struct Cards: View {
         
         let steps: [StepModel] = [
             StepModel(Icon: "brush", title: "Brushing Teeth", description: "Apply toothapste \non their toothbrush.", imageName: "BT1", color: .babyBlue ,audioF: "BTV2.mp3"),
-            StepModel(Icon: "brush",title: "Brushing Teeth", description: "Children brush their teeth gently.", imageName: "brushing2", color: .babyBlue,audioF: "BTV2.mp3"),
-            StepModel(Icon: "brush", title: "Brushing Teeth", description: "Children rinse their mouths after brushing their teeth..", imageName: "brushing3", color: .babyBlue,audioF: "BTV2.mp3"),
+            StepModel(Icon: "brush",title: "Brushing Teeth", description: "Children brush their teeth gently.", imageName: "BT2", color: .babyBlue,audioF: "BTV2.mp3"),
+            StepModel(Icon: "brush", title: "Brushing Teeth", description: "Children rinse their mouths after brushing their teeth..", imageName: "BT3", color: .babyBlue,audioF: "BTV2.mp3"),
             StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .babyBlue,audioF: "BTV2.mp3"),
         ]
         
@@ -202,9 +204,9 @@ public struct Cards: View {
     struct EatingFoodCardsView: View {
         
         let steps: [StepModel] = [
-            StepModel(Icon: "apple", title: "Eating food", description: "When we feel hungry, we listen to our tummy and know it’s time to eat.", imageName: "EatingFood1", color: .babyYellow,audioF: "EF1.mp3"),
-            StepModel(Icon: "apple",title: "Eating food", description: "We sit at the table, choose our food, and take small bites to help our body feel good", imageName: "EatingFood2", color: .babyYellow,audioF: "EF2.mp3"),
-            StepModel(Icon: "apple", title: "Eating food", description: "After we eat, our tummy feels happy and full, and we have energy to play and learn.", imageName: "EatingFood3", color: .babyYellow,audioF: "EF3.mp3"),
+            StepModel(Icon: "apple", title: "Eating food", description: "When we feel hungry, we listen to our tummy and know it’s time to eat.", imageName: "EF1", color: .babyYellow,audioF: "EF1.mp3"),
+            StepModel(Icon: "apple",title: "Eating food", description: "We sit at the table, choose our food, and take small bites to help our body feel good", imageName: "EF2", color: .babyYellow,audioF: "EF2.mp3"),
+            StepModel(Icon: "apple", title: "Eating food", description: "After we eat, our tummy feels happy and full, and we have energy to play and learn.", imageName: "EF3", color: .babyYellow,audioF: "EF3.mp3"),
             StepModel(Icon: " ", title: "Good Job", description: " ", imageName: "GJ", color: .babyYellow,audioF: "GJ.mp3"),
         ]
         

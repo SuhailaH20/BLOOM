@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		819262482EE50BE500764DB3 /* BTV2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 819262472EE50BE500764DB3 /* BTV2.mp3 */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		D89EA10C2ED4891400E08F0F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -28,13 +24,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		819262472EE50BE500764DB3 /* BTV2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BTV2.mp3; path = ../../Downloads/BTV2.mp3; sourceTree = "<group>"; };
 		D89EA0FE2ED4891300E08F0F /* DOWNY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOWNY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89EA10B2ED4891400E08F0F /* DOWNYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DOWNYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89EA1152ED4891400E08F0F /* DOWNYUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DOWNYUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		81254FBF2EE5C203009EE784 /* Voice */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Voice;
+			sourceTree = "<group>";
+		};
 		D89EA1002ED4891300E08F0F /* DOWNY */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DOWNY;
@@ -80,7 +80,7 @@
 		D89EA0F52ED4891300E08F0F = {
 			isa = PBXGroup;
 			children = (
-				819262472EE50BE500764DB3 /* BTV2.mp3 */,
+				81254FBF2EE5C203009EE784 /* Voice */,
 				D89EA1002ED4891300E08F0F /* DOWNY */,
 				D89EA10E2ED4891400E08F0F /* DOWNYTests */,
 				D89EA1182ED4891400E08F0F /* DOWNYUITests */,
@@ -114,6 +114,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				81254FBF2EE5C203009EE784 /* Voice */,
 				D89EA1002ED4891300E08F0F /* DOWNY */,
 			);
 			name = DOWNY;
@@ -218,7 +219,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				819262482EE50BE500764DB3 /* BTV2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
