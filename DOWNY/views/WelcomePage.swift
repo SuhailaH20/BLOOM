@@ -12,7 +12,9 @@ struct WelcomePage: View {
     @State private var isActive: Bool = false
     
     var body: some View {
+        
         NavigationStack {
+            
             VStack(alignment: .center) {
                 Image("rainbow")
                     .resizable()
@@ -41,30 +43,33 @@ struct WelcomePage: View {
                         .cornerRadius(10)
                 }
             }
-//            .background(
-//                backgroundImage()
-//            )
+            
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(red:255/255,green:246/255,blue:236/255,opacity: 1.0))
+            .ignoresSafeArea()
+            
+            
             .onAppear {
                 configureAudioSession()
             }
             .navigationDestination(isPresented: $isActive) {
                 BoardPage()
             }
+            
         }
+        
     }
+    
 }
 
 private func configureAudioSession() {
     do {
-        // Playback يسمح بالتشغيل حتى في الخلفية إذا فعّلت الخلفية لاحقًا
         try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
         try AVAudioSession.sharedInstance().setActive(true)
     } catch {
         print("⚠️ Audio session setup error: \(error)")
     }
 }
-
-
 
 #Preview {
     WelcomePage()

@@ -14,13 +14,18 @@ struct BoardPage: View {
         if selectedCard != nil {
             Cards(selectedCard: $selectedCard)
         } else {
-            VStack {
+            VStack{
+                Spacer().frame(height: 42)
                 Image("Title")
                 Spacer().frame(height: 42)
                 
                 AllCards(selectedCard: $selectedCard)
             }
-           // .background(backgroundImage())
+            
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(red:255/255,green:246/255,blue:236/255,opacity: 1.0))
+            .ignoresSafeArea()
+             
         }
     }
 }
@@ -73,7 +78,7 @@ struct AllCards: View {
                 }) {
                     ColorCard(color: .babyYellow) {
                         CardContent(
-                            imageName: "brushingTeeth4",
+                            imageName: "Brush",
                             title: "Brushing teeth",
                             description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
                         )
@@ -113,23 +118,24 @@ struct CardContent: View {
     let description: String
     
     var body: some View {
-        HStack {
+        HStack(spacing:0) {
             Image(imageName)
                 .resizable()
-                .frame(width: 155, height: 222)
+                .frame(width: 155, height: 200)
             
             Spacer().frame(width: 44)
             
             VStack(alignment: .leading) {
                 Text(title)
                     .font(.system(size: 50, weight: .bold))
-                    .foregroundColor(.white)
-                
+                    .foregroundStyle(Color(red:55/255,green:55/255,blue:55/255,opacity: 1.0))
+//
                 Spacer().frame(height: 12)
                 
                 Text(description)
                     .font(.system(size: 18, weight: .regular))
-                    .foregroundColor(.white)
+                    .foregroundStyle(Color(red:55/255,green:55/255,blue:55/255,opacity: 0.5))
+                    
             }
         }
     }

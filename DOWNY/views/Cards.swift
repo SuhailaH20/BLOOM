@@ -32,8 +32,10 @@ public struct Cards: View {
                 BrushingTeethCardsView()
             }
         }
-        //        .background(backgroundImage())
-        //    }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(red:255/255,green:246/255,blue:236/255,opacity: 1.0))
+        .ignoresSafeArea()
+       
     }
     
     
@@ -84,6 +86,7 @@ public struct Cards: View {
             .background(
                 RoundedRectangle(cornerRadius: 69)
                     .foregroundStyle(color)
+                
                     .shadow(color: .black.opacity(0.25), radius: 10, x: 9, y: 30)
                     .overlay(
                         Image("pattern")
@@ -104,7 +107,7 @@ public struct Cards: View {
                 }.font(.system(size: 48, weight: .bold))
                     .foregroundColor(.babyBlue)
                     .frame(width: 592, height: 123)
-                    .background(Color.white.opacity(0.7))
+                   .background(Color.white.opacity(0.7))
                 
                     .cornerRadius(100)
             }
