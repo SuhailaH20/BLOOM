@@ -41,9 +41,9 @@ struct WelcomePage: View {
                         .cornerRadius(10)
                 }
             }
-            .background(
-                backgroundImage()
-            )
+//            .background(
+//                backgroundImage()
+//            )
             .onAppear {
                 configureAudioSession()
             }
@@ -64,14 +64,7 @@ private func configureAudioSession() {
     }
 }
 
-struct backgroundImage: View {
-    var body: some View {
-        Image("background")
-            .resizable()
-            .ignoresSafeArea()
-            .frame(width: 850, height: 1180)
-    }
-}
+
 
 #Preview {
     WelcomePage()

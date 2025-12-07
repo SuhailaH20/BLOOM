@@ -20,7 +20,7 @@ struct BoardPage: View {
                 
                 AllCards(selectedCard: $selectedCard)
             }
-            .background(backgroundImage())
+           // .background(backgroundImage())
         }
     }
 }
@@ -34,7 +34,7 @@ struct AllCards: View {
                 Button(action: {
                     selectedCard = "eatingFood"
                 }) {
-                    ColorCard(color: .orangy) {
+                    ColorCard(color: .babyBlue) {
                         CardContent(
                             imageName: "eating",
                             title: "Eating Food",
@@ -47,7 +47,7 @@ struct AllCards: View {
                 Button(action: {
                     selectedCard = "beingKind"
                 }){
-                    ColorCard(color: .redey) {
+                    ColorCard(color: .babyYellow) {
                         CardContent(
                             imageName: "kind",
                             title: "Being kind",
@@ -59,7 +59,7 @@ struct AllCards: View {
                 Button(action: {
                     selectedCard = "brushingHair"
                 }){
-                    ColorCard(color: .greeney) {
+                    ColorCard(color: .babyBlue) {
                         CardContent(
                             imageName: "combing",
                             title: "Combing hair",
@@ -71,7 +71,7 @@ struct AllCards: View {
                 Button(action: {
                     selectedCard = "brushingTeeth"
                 }) {
-                    ColorCard(color: .bluey) {
+                    ColorCard(color: .babyYellow) {
                         CardContent(
                             imageName: "brushingTeeth4",
                             title: "Brushing teeth",
