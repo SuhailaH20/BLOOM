@@ -46,6 +46,7 @@ struct AllCards: View {
                             description: String(localized:"Children should eat healthy food to grow strong and stay active.")
                         )
                     }
+                    .padding(.horizontal, 70)
                 }
                 .buttonStyle(PlainButtonStyle())
                 
