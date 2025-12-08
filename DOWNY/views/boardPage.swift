@@ -42,8 +42,8 @@ struct AllCards: View {
                     ColorCard(color: .babyBlue) {
                         CardContent(
                             imageName: "eating",
-                            title: "Eating Food",
-                            description: "Children should eat healthy food to  \n grow strong and stay active."
+                            title:String(localized: "Eating food"),
+                            description: String(localized:"Children should eat healthy food to grow strong and stay active.")
                         )
                     }
                 }
@@ -53,10 +53,10 @@ struct AllCards: View {
                     selectedCard = "beingKind"
                 }){
                     ColorCard(color: .babyYellow) {
-                        CardContent(
+                        CardContent( 
                             imageName: "kind",
-                            title: "Being Kind",
-                            description: "Children should be kind to others \n and treat them very well."
+                            title: String(localized:"Being Kind"),
+                            description:String(localized: "Children should be kind to others and treat them very well.")
                         )
                     }
                 }.buttonStyle(PlainButtonStyle())
@@ -67,8 +67,9 @@ struct AllCards: View {
                     ColorCard(color: .babyBlue) {
                         CardContent(
                             imageName: "combing",
-                            title: "Combing Hair",
-                            description: "Children brush their hair and  take \ncare of their look."
+                            title:String(localized:
+                                "Combing hair"),
+                            description:String(localized: "Children brush their hair and  take care of their look.")
                         )
                     }
                 }.buttonStyle(PlainButtonStyle())
@@ -79,8 +80,8 @@ struct AllCards: View {
                     ColorCard(color: .babyYellow) {
                         CardContent(
                             imageName: "Brush",
-                            title: "Brushing Teeth",
-                            description: "Children brush their teeth twice a day \nwith their beautiful toothbrushes."
+                            title: String(localized:"Brushing Teeth"),
+                            description:String(localized: "Children brush their teeth twice a day with their beautiful toothbrushes.")
                         )
                     }
                 }.buttonStyle(PlainButtonStyle())
@@ -91,8 +92,8 @@ struct AllCards: View {
                     ColorCard(color: .babyBlue) {
                         CardContent(
                             imageName: "Shower",
-                            title: "Taking Shower",
-                            description: "When children get dirty they take \nshower in order to be clean.."
+                            title: String(localized:"Taking Shower"),
+                            description: String(localized:"When children get dirty they take shower in order to be clean..")
                         )}}.buttonStyle(PlainButtonStyle())
                 
                 Button(action: {
@@ -101,8 +102,8 @@ struct AllCards: View {
                     ColorCard(color: .babyYellow) {
                         CardContent(
                             imageName: "Screen",
-                            title: "Screen Time",
-                            description: "When children get dirty they take \nshower in order to be clean.."
+                            title: String(localized:"Screen Time"),
+                            description: String(localized:"When children get dirty they take shower in order to be clean..")
                         )}}.buttonStyle(PlainButtonStyle())
                 
                 Button(action: {
@@ -111,8 +112,8 @@ struct AllCards: View {
                     ColorCard(color: .babyBlue) {
                         CardContent(
                             imageName: "Washing",
-                            title: "Washing Hands",
-                            description: "When children get dirty they take \nshower in order to be clean.."
+                            title: String(localized:"Washing Hands"),
+                            description: String(localized:"When children get dirty they take shower in order to be clean..")
                         )}}.buttonStyle(PlainButtonStyle())
                 
                 Button(action: {
@@ -121,8 +122,8 @@ struct AllCards: View {
                     ColorCard(color: .babyYellow) {
                         CardContent(
                             imageName: "Sleep",
-                            title: "Sleep Early",
-                            description: "When children get dirty they take \nshower in order to be clean.."
+                            title:String(localized: "Sleep Early"),
+                            description: String(localized:"When children get dirty they take shower in order to be clean..")
                         )}}.buttonStyle(PlainButtonStyle())
                 
                 

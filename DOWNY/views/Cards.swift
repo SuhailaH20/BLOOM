@@ -195,7 +195,7 @@ public struct Cards: View {
     struct BrushingTeethCardsView: View {
         
         let steps: [StepModel] = [
-            StepModel(Icon: "brush", title:String(localized: "Brushing Teeth"), description: String(localized:"Apply toothapste \non their toothbrush."), imageName: "BT1", color: .babyYellow ,audioF: "BTV2.mp3"),
+            StepModel(Icon: "brush", title:String(localized: "Brushing Teeth"), description: String(localized:"Apply toothapste on their toothbrush."), imageName: "BT1", color: .babyYellow ,audioF: "BTV2.mp3"),
             StepModel(Icon: "brush",title:String(localized: "Brushing Teeth"), description:String(localized: "Children brush their teeth gently."), imageName: "BT2", color: .babyYellow,audioF: "BTV2.mp3"),
             StepModel(Icon: "brush", title:String(localized: "Brushing Teeth"), description: String(localized:"Children rinse their mouths after brushing their teeth.."), imageName: "BT3", color: .babyYellow,audioF: "BTV2.mp3"),
             StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyYellow,audioF: "BTV2.mp3"),
@@ -232,9 +232,9 @@ public struct Cards: View {
     struct BeingKindCardsView: View {
         
         let steps: [StepModel] = [
-            StepModel(Icon: "", title: String(localized:"Being Kind"), description:String(localized: "When we meet our friends or family , we greet \nthem with a smile"), imageName: "BK1", color: .babyYellow,audioF: "EF1.mp3"),
+            StepModel(Icon: "", title: String(localized:"Being Kind"), description:String(localized: "When we meet our friends or family , we greet them with a smile"), imageName: "BK1", color: .babyYellow,audioF: "EF1.mp3"),
             StepModel(Icon: "",title: String(localized:"Being Kind"), description: String(localized:"We share, help, and use kind words because it makes everyone feel safe and happy"), imageName: "BK2", color: .babyYellow,audioF: "EF2.mp3"),
-            StepModel(Icon: "", title:String(localized: "Being Kind"), description:String(localized: "Giving gifts makes our heart feels warm,\n and the people around us feel good too."), imageName: "BK3", color: .babyYellow,audioF: "EF3.mp3"),
+            StepModel(Icon: "", title:String(localized: "Being Kind"), description:String(localized: "Giving gifts makes our heart feels warm,and the people around us feel good too."), imageName: "BK3", color: .babyYellow,audioF: "EF3.mp3"),
             StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyYellow,audioF: "GJ.mp3"),
         ]
         
@@ -249,10 +249,10 @@ public struct Cards: View {
     struct BrushingHairCardsView: View {
         
         let steps: [StepModel] = [
-            StepModel(Icon: "", title: String(localized:"Combing hair"), description: String(localized:"Children brush their hair gently to \nremove the small tangles"), imageName: "CH1", color: .babyBlue,audioF: "EF1.mp3"),
-            StepModel(Icon: "",title: "Combing hair", description: String(localized:"Then, they comb their hair slowly to \nmake it smooth and tidy.")
+            StepModel(Icon: "", title: String(localized:"Combing hair"), description: String(localized:"Children brush their hair gently to remove the small tangles"), imageName: "CH1", color: .babyBlue,audioF: "EF1.mp3"),
+            StepModel(Icon: "",title:String(localized: "Combing hair"), description: String(localized:"Then, they comb their hair slowly to make it smooth and tidy.")
                       , imageName: "CH2", color: .babyBlue,audioF: "EF2.mp3"),
-            StepModel(Icon: "", title: String(localized:"Combing hair"), description: String(localized:"Finally, they fix their hair so it looks \nneat before they go out."), imageName: "CH3", color: .babyBlue,audioF: "EF3.mp3"),
+            StepModel(Icon: "", title: String(localized:"Combing hair"), description: String(localized:"Finally, they fix their hair so it looks neat before they go out."), imageName: "CH3", color: .babyBlue,audioF: "EF3.mp3"),
             StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyBlue,audioF: "GJ.mp3"),
         ]
         
