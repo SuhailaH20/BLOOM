@@ -251,21 +251,56 @@ public struct Cards: View {
     }
     
     struct BeingKindCardsView: View {
-        
-        let steps: [StepModel] = [
-            StepModel(Icon: "", title: String(localized:"Being Kind"), description:String(localized: "Children give a gift The child holds the gift and gives it kindly."), imageName: "BK1", color: .babyYellow,audioF: "EF1.mp3"),
-            StepModel(Icon: "",title: String(localized:"Being Kind"), description: String(localized:"Children offer flowers to their families kindly, sharing warm smiles."), imageName: "BK2", color: .babyYellow,audioF: "EF2.mp3"),
-            StepModel(Icon: "", title:String(localized: "Being Kind"), description:String(localized: "When we meet our friends or family, we greet them with a smile"), imageName: "BK3", color: .babyYellow,audioF: "EF3.mp3"),
-            StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyYellow,audioF: "GJ.mp3"),
-        ]
-        
+
+        // detect device language
+        private var isArabic: Bool {
+            Locale.current.language.languageCode?.identifier == "ar"
+        }
+
+        var steps: [StepModel] {
+            [
+                StepModel(
+                    Icon: "",
+                    title: String(localized: "Being Kind"),
+                    description: String(localized: "Children give a gift The child holds the gift and gives it kindly."),
+                    imageName: "BK1",
+                    color: .babyYellow,
+                    audioF: isArabic ? "BeingKindAR1.mp3" : "BeingKind1.mp3"
+                ),
+                StepModel(
+                    Icon: "",
+                    title: String(localized:"Being Kind"),
+                    description: String(localized:"Children offer flowers to their families kindly, sharing warm smiles."),
+                    imageName: "BK2",
+                    color: .babyYellow,
+                    audioF: isArabic ? "BeingKindAR2.mp3" : "BeingKind2.mp3"
+                ),
+                StepModel(
+                    Icon: "",
+                    title: String(localized: "Being Kind"),
+                    description: String(localized: "When we meet our friends or family, we greet them with a smile"),
+                    imageName: "BK3",
+                    color: .babyYellow,
+                    audioF: isArabic ? "BeingKindAR3.mp3" : "BeingKind3.mp3"
+                ),
+                StepModel(
+                    Icon: " ",
+                    title: String(localized:"Good Job"),
+                    description: " ",
+                    imageName: "GJ",
+                    color: .babyYellow,
+                    audioF: isArabic ? "GJ_AR.mp3" : "GJ.mp3"
+                ),
+            ]
+        }
+
         var body: some View {
             StepFlow(steps: steps) { step in
                 StepCardContent(step: step)
             }
-            
         }
     }
+
     
     struct BrushingHairCardsView: View {
         
