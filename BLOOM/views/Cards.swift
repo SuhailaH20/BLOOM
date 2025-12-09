@@ -215,20 +215,54 @@ public struct Cards: View {
     
     struct BrushingTeethCardsView: View {
         
-        let steps: [StepModel] = [
-            StepModel(Icon: "brush", title:String(localized: "Brushing Teeth"), description: String(localized:"Children apply toothapste on their toothbrush."), imageName: "BT1", color: .babyYellow ,audioF: "BTV2.mp3"),
-            StepModel(Icon: "brush",title:String(localized: "Brushing Teeth"), description:String(localized: "Children brush their teeth gently."), imageName: "BT2", color: .babyYellow,audioF: "BTV2.mp3"),
-            StepModel(Icon: "brush", title:String(localized: "Brushing Teeth"), description: String(localized:"Children rinse their mouths after brushing their teeth.."), imageName: "BT3", color: .babyYellow,audioF: "BTV2.mp3"),
-            StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyYellow,audioF: "clap.mp3"),
-        ]
+        private var isArabic: Bool {
+            Locale.current.language.languageCode?.identifier == "ar"
+        }
+        
+        var steps: [StepModel] {
+            [
+                StepModel(
+                    Icon: "brush",
+                    title: String(localized: "Brushing Teeth"),
+                    description: String(localized: "Children apply toothpaste on their toothbrush."),
+                    imageName: "BT1",
+                    color: .babyYellow,
+                    audioF: isArabic ? "BrushingTeethAR1.mp3" : "BrushingTeeth1.mp3"
+                ),
+                StepModel(
+                    Icon: "brush",
+                    title: String(localized: "Brushing Teeth"),
+                    description: String(localized: "Children brush their teeth gently."),
+                    imageName: "BT2",
+                    color: .babyYellow,
+                    audioF: isArabic ? "BrushingTeethAR2.mp3" : "BrushingTeeth2.mp3"
+                ),
+                StepModel(
+                    Icon: "brush",
+                    title: String(localized: "Brushing Teeth"),
+                    description: String(localized: "Children rinse their mouths after brushing their teeth."),
+                    imageName: "BT3",
+                    color: .babyYellow,
+                    audioF: isArabic ? "BrushingTeethAR3.mp3" : "BrushingTeeth3.mp3"
+                ),
+                StepModel(
+                    Icon: " ",
+                    title: String(localized: "Good Job"),
+                    description: " ",
+                    imageName: "GJ",
+                    color: .babyYellow,
+                    audioF: "clap.mp3"
+                )
+            ]
+        }
         
         var body: some View {
             StepFlow(steps: steps) { step in
                 StepCardContent(step: step)
             }
-            
         }
     }
+
     
     
     
