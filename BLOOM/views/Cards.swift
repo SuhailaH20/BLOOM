@@ -201,7 +201,8 @@ public struct Cards: View {
                 
                 Image(step.imageName)
                     .resizable()
-                    .frame(width: 349, height: 334)
+                    .frame(width: step.imageName == "GJ" ? 620 : 349,
+                           height: step.imageName == "GJ" ? 620 : 334)
                 
             }
             
