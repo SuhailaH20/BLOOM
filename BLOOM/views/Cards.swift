@@ -505,23 +505,58 @@ public struct Cards: View {
             
         }
     }
+    
+    
     struct SleepCardsView: View {
         
-        let steps: [StepModel] = [
-            StepModel(Icon: "", title: String(localized:"Sleep Early"), description: String(localized:"When it gets late, our body feels sleepy and needs rest to grow strong and healthy."), imageName: "SE1", color: .babyYellow,audioF: "EF1.mp3"),
-            StepModel(Icon: "",title:String(localized: "Sleep Early"), description:String(localized: "We turn off screens, brush our teeth, and get into bed so our brain knows it’s time to sleep.")
-                      , imageName: "SE2", color: .babyYellow,audioF: "EF2.mp3"),
-            StepModel(Icon: "", title: String(localized:"Sleep Early"), description: String(localized:"We turn off screens, brush our teeth, and get into bed so our brain knows it’s time to sleep."), imageName: "SE3", color: .babyYellow,audioF: "EF3.mp3"),
-            StepModel(Icon: " ", title: String(localized:"Good Job"), description: " ", imageName: "GJ", color: .babyYellow,audioF: "GJ.mp3"),
-        ]
+        private var isArabic: Bool {
+            Locale.current.language.languageCode?.identifier == "ar"
+        }
+        
+        var steps: [StepModel] {
+            [
+                StepModel(
+                    Icon: "",
+                    title: String(localized: "Sleep Early"),
+                    description: String(localized: "When it gets late, our body feels sleepy and needs rest to grow strong and healthy."),
+                    imageName: "SE1",
+                    color: .babyYellow,
+                    audioF: isArabic ? "SleepEarlyAR1.mp3" : "SleepEarly1.mp3"
+                ),
+                StepModel(
+                    Icon: "",
+                    title: String(localized: "Sleep Early"),
+                    description: String(localized: "We turn off screens, brush our teeth, and get into bed so our brain knows it’s time to sleep."),
+                    imageName: "SE2",
+                    color: .babyYellow,
+                    audioF: isArabic ? "SleepEarlyAR2.mp3" : "SleepEarly2.mp3"
+                ),
+                StepModel(
+                    Icon: "",
+                    title: String(localized: "Sleep Early"),
+                    description: String(localized: "We turn off screens, brush our teeth, and get into bed so our brain knows it’s time to sleep."),
+                    imageName: "SE3",
+                    color: .babyYellow,
+                    audioF: isArabic ? "SleepEarlyAR3.mp3" : "SleepEarly3.mp3"
+                ),
+                StepModel(
+                    Icon: " ",
+                    title: String(localized: "Good Job"),
+                    description: " ",
+                    imageName: "GJ",
+                    color: .babyYellow,
+                    audioF: "clap.mp3"
+                )
+            ]
+        }
         
         var body: some View {
             StepFlow(steps: steps) { step in
                 StepCardContent(step: step)
             }
-            
         }
     }
+
     
 }
 
