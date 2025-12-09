@@ -18,26 +18,25 @@ public struct Cards: View {
                 EatingFoodCardsView()
                 
             case "beingKind":
-               // BrushingTeethCardsView()
                 BeingKindCardsView()
                 
             case "brushingTeeth":
                 BrushingTeethCardsView()
                 
             case "brushingHair":
-                   BrushingHairCardsView()
+                BrushingHairCardsView()
                 
             case "Takingshower":
-                   TakingShowerCardsView()
+                TakingShowerCardsView()
                 
             case "Screentime":
-                   ScreenCardsView()
-//                
-          case "Washing":
-               WashingCardsView()
-//                
-           case "Sleep":
-                   SleepCardsView()
+                ScreenCardsView()
+  
+            case "Washing":
+                WashingCardsView()
+             
+            case "Sleep":
+                SleepCardsView()
                 
             default:
                 BrushingTeethCardsView()
@@ -46,7 +45,7 @@ public struct Cards: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(red:255/255,green:246/255,blue:236/255,opacity: 1.0))
         .ignoresSafeArea()
-       
+        
     }
     
     
@@ -78,7 +77,7 @@ public struct Cards: View {
         var body: some View {
             VStack(spacing: -10){
                 
-             
+                
                 Spacer().frame(height: 30)
                 content
                 
@@ -115,20 +114,20 @@ public struct Cards: View {
         
         private var playButton: some View {
             Button(action: {
-                 onNext()
-                 onPlaySound()
-             }){
+                onNext()
+                onPlaySound()
+            }){
                 HStack {
                     Image(systemName: "play.fill")
                     Spacer().frame(width: 33)
                     Text("Play routine")
                 }
                 .font(.system(size: 48, weight: .bold))
-                    .foregroundColor(.black)
-                    .frame(width: 592, height: 123)
-                   .background(Color.white.opacity(0.7))
+                .foregroundColor(.black)
+                .frame(width: 592, height: 123)
+                .background(Color.white.opacity(0.7))
                 
-                    .cornerRadius(100)
+                .cornerRadius(100)
             }
         }
     }
@@ -140,7 +139,7 @@ public struct Cards: View {
         let content: (StepModel) -> Content
         
         @State private var currentIndex = 0
-        @State private var firstStepPlayed = false 
+        @State private var firstStepPlayed = false
         
         var body: some View {
             StepCard(
@@ -178,8 +177,8 @@ public struct Cards: View {
             }
         }
     }
-
-
+    
+    
     
     
     
@@ -205,7 +204,7 @@ public struct Cards: View {
                     .frame(width: 349, height: 334)
                 
             }
-    
+            
             
         }
     }
@@ -353,8 +352,7 @@ public struct Cards: View {
             
         }
     }
-    //
-   
+    
 }
 
 #Preview {
