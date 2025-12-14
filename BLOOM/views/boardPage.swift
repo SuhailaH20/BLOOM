@@ -89,7 +89,7 @@ struct AllCards: View {
     }
     private var allItems: [CardItem] {
         [
-            // ✅ تعليمي (Educational) - self-care / daily routines
+           
             CardItem(
                 selectionKey: "eatingFood",
                 imageName: "eating",
@@ -103,7 +103,7 @@ struct AllCards: View {
                 imageName: "Brush",
                 title: String(localized: "Brushing Teeth"),
                 description: String(localized: "Children brush their teeth twice a day with their beautiful toothbrushes."),
-                color: .babyYellow,
+                color: .babyBlue,
                 categories: [.behavioral]
             ),
             CardItem(
@@ -131,7 +131,7 @@ struct AllCards: View {
                 categories: [.behavioral]
             ),
 
-            // ✅ سلوكي (Behavioral) - behavior / social behavior
+          
             CardItem(
                 selectionKey: "beingKind",
                 imageName: "kind",
@@ -141,7 +141,7 @@ struct AllCards: View {
                 categories: [.emotional]
             ),
 
-            // ✅ انفعالي (Emotional) - emotion regulation / calming routines
+       
             CardItem(
                 selectionKey: "Screentime",
                 imageName: "Screen",
@@ -256,8 +256,8 @@ struct FlipNumberCard: View {
                 .shadow(color: .black.opacity(0.12), radius: 10, x: 0, y: 6)
                 .overlay(
                     Text(numberText)
-                        .font(.custom("RoarGuroes-Regular", size: 90))
-                        .foregroundStyle(Color.babyBlue)
+                        .font(.custom("RoarGuroes-Regular", size: 110))
+                        .foregroundStyle(Color.green.opacity(0.7))
                 )
                 .opacity(isFlipped ? 0 : 1)
 

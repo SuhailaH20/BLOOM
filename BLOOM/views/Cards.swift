@@ -228,7 +228,7 @@ public struct Cards: View {
                     title: String(localized: "Brushing Teeth"),
                     description: String(localized: "Children apply toothpaste on their toothbrush."),
                     imageName: "BT1",
-                    color: .babyYellow,
+                    color: .babyBlue,
                     audioF: isArabic ? "BrushingTeethAR1.mp3" : "BrushingTeeth1.mp3"
                 ),
                 StepModel(
@@ -236,7 +236,7 @@ public struct Cards: View {
                     title: String(localized: "Brushing Teeth"),
                     description: String(localized: "Children brush their teeth gently."),
                     imageName: "BT2",
-                    color: .babyYellow,
+                    color: .babyBlue,
                     audioF: isArabic ? "BrushingTeethAR2.mp3" : "BrushingTeeth2.mp3"
                 ),
                 StepModel(
@@ -244,7 +244,7 @@ public struct Cards: View {
                     title: String(localized: "Brushing Teeth"),
                     description: String(localized: "Children rinse their mouths after brushing their teeth."),
                     imageName: "BT3",
-                    color: .babyYellow,
+                    color: .babyBlue,
                     audioF: isArabic ? "BrushingTeethAR3.mp3" : "BrushingTeeth3.mp3"
                 ),
                 StepModel(
@@ -252,7 +252,7 @@ public struct Cards: View {
                     title: String(localized: "Good Job"),
                     description: " ",
                     imageName: "GJ",
-                    color: .babyYellow,
+                    color: .babyBlue,
                     audioF: "clap.mp3"
                 )
             ]
