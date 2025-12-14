@@ -44,6 +44,13 @@
 			);
 			target = D89EA1142ED4891400E08F0F /* BLOOMUITests */;
 		};
+		D89EA6932EEECE4000E08F0F /* Exceptions for "BLOOM" folder in "BLOOM" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D89EA0FD2ED4891300E08F0F /* BLOOM */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -55,6 +62,7 @@
 		D89EA1002ED4891300E08F0F /* BLOOM */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				D89EA6932EEECE4000E08F0F /* Exceptions for "BLOOM" folder in "BLOOM" target */,
 				81EA927C2EE6D31E00072079 /* Exceptions for "BLOOM" folder in "BLOOMTests" target */,
 				81EA927D2EE6D31E00072079 /* Exceptions for "BLOOM" folder in "BLOOMUITests" target */,
 			);
@@ -429,6 +437,7 @@
 				DEVELOPMENT_TEAM = 8L4L4SK6A5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BLOOM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,6 +470,7 @@
 				DEVELOPMENT_TEAM = 8L4L4SK6A5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BLOOM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
