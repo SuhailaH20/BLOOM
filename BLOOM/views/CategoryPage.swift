@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CategoryPage: View {
+    let level: AppLevel
     
     var body: some View {
         VStack(spacing: 40) {
@@ -21,7 +22,7 @@ struct CategoryPage: View {
             Spacer().frame(height: 30)
             
             // سلوكي
-            NavigationLink { BoardPage(category: .behavioral) }
+            NavigationLink { BoardPage(category: .behavioral, level: level) }
             label: {
                 CategoryCard(
                     title: "سلوكي",
@@ -31,7 +32,7 @@ struct CategoryPage: View {
             }
             
             // تعليمي
-            NavigationLink { BoardPage(category: .educational) }
+            NavigationLink { BoardPage(category: .educational, level: level) }
             label: {
                 CategoryCard(
                     title: "تعليمي",
@@ -41,7 +42,7 @@ struct CategoryPage: View {
             }
             
             // انفعالي
-            NavigationLink { BoardPage(category: .emotional) }
+            NavigationLink { BoardPage(category: .emotional, level: level) }
             label: {
                 CategoryCard(
                     title: "انفعالي",
@@ -81,6 +82,6 @@ struct CategoryCard: View {
     }
 }
 
-#Preview {
-    CategoryPage()
-}
+//#Preview {
+//    CategoryPage()
+//}

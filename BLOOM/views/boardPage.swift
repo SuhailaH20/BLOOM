@@ -34,6 +34,7 @@ struct CardItem: Identifiable {
 
 struct BoardPage: View {
     let category: RoutineCategory
+    let level: AppLevel
     @State private var selectedCard: String? = nil
     
     var body: some View {
@@ -46,7 +47,7 @@ struct BoardPage: View {
                 Spacer().frame(height: 42)
 
                 if category == .educational {
-                    NumbersBoardView()
+                    NumbersBoardView(level: level)
                 } else {
                     AllCards(selectedCard: $selectedCard, category: category)
                 }
@@ -214,11 +215,19 @@ struct CardContent: View {
 }
 
 struct NumbersBoardView: View {
-    // Choose the range you want:
-    // 0...9 (10 numbers) OR 1...10
-    private let numbers = Array(1...9)
+    let level: AppLevel
 
-    // 3 columns Apple-style spacing
+    private var numbers: [Int] {
+        switch level {
+        case .basic:
+            return Array(1...3)     // بسيط
+        case .medium:
+            return Array(1...6)     // متوسط
+        case .advanced:
+            return Array(1...9)     // متقدم
+        }
+    }
+
     private let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 22),
         GridItem(.flexible(), spacing: 22),
@@ -231,7 +240,7 @@ struct NumbersBoardView: View {
                 ForEach(numbers, id: \.self) { num in
                     FlipNumberCard(
                         numberText: "\(num)",
-                        imageName: "num_\(num)" // IMPORTANT: add these images to Assets
+                        imageName: "num_\(num)"
                     )
                 }
             }
@@ -241,6 +250,7 @@ struct NumbersBoardView: View {
         }
     }
 }
+
 
 struct FlipNumberCard: View {
     let numberText: String

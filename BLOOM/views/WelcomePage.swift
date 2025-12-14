@@ -53,7 +53,7 @@ struct WelcomePage: View {
                 configureAudioSession()
             }
             .navigationDestination(isPresented: $isActive) {
-                CategoryPage()
+                LevelPage()
             }
             
         }
