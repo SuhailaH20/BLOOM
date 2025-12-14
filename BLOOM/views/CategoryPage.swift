@@ -65,7 +65,7 @@ struct CategoryCard: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 42)
             .fill(color)
-            .frame(width: 600, height: 160)
+            .frame(width: 600, height: 260)
             .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 6)
             .overlay(
                 HStack(spacing: 30) {
